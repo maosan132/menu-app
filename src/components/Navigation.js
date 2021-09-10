@@ -14,8 +14,10 @@ const Navigation = () => {
       menu here
     </div>
     menuMask =
-    <div className="bg-black fixed top-0 left-0 w-full h-full">
-      menu here
+    <div className="fixed top-0 left-0 w-full h-full bg-black-t-50 z-"
+      onClick={() => setShowMenu(false)}
+    >
+      
     </div>
   }
 
