@@ -15,8 +15,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "build:css": "postcss src/index.css -o src/app.css",
-    "watch:css": "postcss src/index.css -o src/app.css -w",
+    "build:css": "postcss src/index.css -o src/tailwind.css",
+    "watch:css": "postcss src/index.css -o src/tailwind.css -w",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
