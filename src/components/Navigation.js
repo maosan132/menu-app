@@ -1,6 +1,11 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+
 const Navigation = () => (
   <nav>
-    NAV
+    <span className="text-xl">
+      <FontAwesomeIcon icon={faBars} />
+    </span>
   </nav>
 )
 
