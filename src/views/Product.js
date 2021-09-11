@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useParams} from 'react-router-dom';
 
 export default function Product() {
-  const url = 'https://613cd4e5270b96001798b299.mockapi.io/api/v1/test/3';
+  const { id } = useParams();
+  const url = `https://613cd4e5270b96001798b299.mockapi.io/api/v1/test/${id}`;
   const [product, setProduct] = useState(null);
 
   let content = null
