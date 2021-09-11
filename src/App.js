@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import About from './views/About';
 import Home from './views/Home';
+import Product from './views/Product'
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
             </Route>
             <Route path="/about">
               <About />
+            </Route>
+            <Route path="/products/:id">
+              <Product />
             </Route>
           </Switch>
         </div>
