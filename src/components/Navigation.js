@@ -15,7 +15,7 @@ const Navigation = () => {
   //     menu here
   //   </div>
   //   menuMask =
-  //   <div className="fixed top-0 left-0 w-full h-full bg-black-t-50 z-"
+  //   <div className="fixed top-0 left-0 w-full h-full bg-black-t-50 "
   //     onClick={() => setShowMenu(false)}></div>
   // }
 
@@ -24,7 +24,6 @@ const Navigation = () => {
     enter: {opacity: 1},
     leave: {opacity: 0},
   })
-  
 
   return (
     <nav>
@@ -35,8 +34,24 @@ const Navigation = () => {
       </span>
       {/* {menuMask}
       {menu} */}
-      {transitions(
-        (styles, item) => item && <animated.div style={styles}>✌️</animated.div>
+      {transitions( // for the menu mask
+        (styles, item) => item && 
+        <animated.div
+        style={styles}
+        className="fixed top-0 left-0 w-full h-full bg-black-t-50"
+        onClick={() => setShowMenu(false)}
+        >
+          this is the menu
+        </animated.div>
+      )}
+      {transitions( // for he menu
+        (styles, item) => item && 
+        <animated.div
+        style={styles}
+        className="fixed bg-white top-0 left-0 w-4/5 h-full shadow"
+        >
+          this is the menu
+        </animated.div>
       )}
       {/* {transitions.map(({item, key, props}) =>
         item && <animated.div style={props} key=>✌️</animated.div>
