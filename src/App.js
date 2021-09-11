@@ -10,7 +10,6 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        <HelloWorld name="Mauricio"/>
         <Switch>
           <Route path="/" exact>
             <Home />
