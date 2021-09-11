@@ -1,0 +1,34 @@
+{
+  "product_id": "$commerce.productName",
+  "createdAt": "$date.createdAt",
+  "name": "$name.findName",
+  "price": "$commerce.price",
+  "description": "$commerce.productDescription",
+  "material": "$commerce.productMaterial",
+  "images": [
+      {
+        "id": "$finance.creditCardCVV",
+        "productId": "$id",
+        "createdAt": "$date.createdAt",
+        "imageUrl": "$image.imageUrl"
+      },
+      {
+        "id": "$finance.creditCardCVV",
+        "productId": "$datatype.string",
+        "createdAt": "$date.recent",
+        "imageUrl": "$image.imageUrl"
+      },
+      {
+        "id": "$finance.creditCardCVV",
+        "productId": "$datatype.string",
+        "recent": "$date.recent",
+        "imageUrl": "$image.imageUrl"
+      },
+      {
+        "id": "$finance.creditCardCVV",
+        "productId": "$datatype.string",
+        "recent": "$date.createdAt",
+        "imageUrl": "$image.imageUrl"
+      }
+  ]
+}
