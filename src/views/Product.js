@@ -12,7 +12,7 @@ export default function Product() {
   useEffect(() => {
     axios.get(url)
     .then(response => {
-      setProduct(response.data)
+      setProduct(response.data);
     })
   }, [url])
 
