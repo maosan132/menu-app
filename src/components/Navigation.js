@@ -16,23 +16,33 @@ const Navigation = () => {
   //   </div>
   //   menuMask =
   //   <div className="fixed top-0 left-0 w-full h-full bg-black-t-50 z-"
-  //     onClick={() => setShowMenu(false)}
-  //   >
-      
-  //   </div>
+  //     onClick={() => setShowMenu(false)}></div>
   // }
+
+  const transitions = useTransition(showMenu, {
+    from: {position: 'absolute', opacity: 0},
+    enter: {opacity: 1},
+    leave: {opacity: 0},
+  })
+  
 
   return (
     <nav>
-    <span className="text-xl">
-      <FontAwesomeIcon
-      icon={faBars}
-      onClick={() => setShowMenu(!showMenu) }/>
-    </span>
-    {menuMask}
-    {menu}
-  </nav>
-    )
+      <span className="text-xl">
+        <FontAwesomeIcon
+        icon={faBars}
+        onClick={() => setShowMenu(!showMenu) }/>
+      </span>
+      {/* {menuMask}
+      {menu} */}
+      {transitions(
+        (styles, item) => item && <animated.div style={styles}>✌️</animated.div>
+      )}
+      {/* {transitions.map(({item, key, props}) =>
+        item && <animated.div style={props} key=>✌️</animated.div>
+      )} */}
+    </nav>
+  )
 
 }
 
