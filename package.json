@@ -18,6 +18,9 @@
     "tailwindcss": "^2.2.15",
     "web-vitals": "^1.1.2"
   },
+  "peerDependencies": {
+    "react-spring": "^8.x"
+  },
   "scripts": {
     "build:css": "postcss src/index.css -o src/tailwind.css",
     "watch:css": "postcss src/index.css -o src/tailwind.css -w",
