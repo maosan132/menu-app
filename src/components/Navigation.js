@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useTransition, animated } from 'react-spring';
-import { Link } from 'react-router-dom';
+import Menu from './Menu'
 
 const Navigation = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -57,27 +57,7 @@ const Navigation = () => {
         style={styles}
         className="fixed bg-white top-0 left-0 w-4/5 h-full shadow p-3"
         >
-          <span className="font-bold">
-            The Menu
-          </span>
-          <ul>
-            <li>
-              <Link to="/"
-              className="text-blue-500"
-              onClick={() => setShowMenu(false)}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/about"
-              className="text-blue-500"
-              onClick={() => setShowMenu(false)}
-              >
-                About
-              </Link>
-            </li>
-          </ul>
+          <Menu closeMenu={() => setShowMenu(false)}/>
         </animated.div>
       )}
       {/* {transitions.map(({item, key, props}) =>
