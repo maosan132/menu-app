@@ -62,10 +62,20 @@ const Navigation = () => {
           </span>
           <ul>
             <li>
-              <Link to="/" className="text-blue-500">Home</Link>
+              <Link to="/"
+              className="text-blue-500"
+              onClick={() => setShowMenu(false)}
+              >
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/about" className="text-blue-500">About</Link>
+              <Link to="/about"
+              className="text-blue-500"
+              onClick={() => setShowMenu(false)}
+              >
+                About
+              </Link>
             </li>
           </ul>
         </animated.div>
