@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Loader from '../components/Loader'
 
 export default function Product() {
