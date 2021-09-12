@@ -5,14 +5,20 @@ import { useParams} from 'react-router-dom';
 export default function Product() {
   const { id } = useParams();
   const url = `https://613cd4e5270b96001798b299.mockapi.io/api/v1/test/${id}`;
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState({
+    data: null,
+    loading: false,
+  });
 
   let content = null
 
   useEffect(() => {
     axios.get(url)
     .then(response => {
-      setProduct(response.data);
+      setProduct({
+        loading: true,
+        data: response.data
+      };
     })
   }, [url])
 
