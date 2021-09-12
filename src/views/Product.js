@@ -1,17 +1,12 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import Loader from '../components/Loader'
+import useAxiosGet from '../hooks/HttpRequests';
 
 export default function Product() {
   const { id } = useParams();
   const url = `https://613cd4e5270b96001798b299.mockapi.io/api/v1/test/${id}`;
-  // const [product, setProduct] = useState(null);
-  const [product, setProduct] = useState({
-    data: null,
-    loading: false,
-    error: false
-  });
+
+  let product = useAxiosGet(url);
 
   let content = null;
 
@@ -22,29 +17,7 @@ export default function Product() {
   //   })
   // }, [url])
 
-  useEffect(() => {
-    setProduct({
-      loading: true,
-      data: null,
-      error: false
-    })
-    axios.get(url)
-    .then(response => {
-      setProduct({
-        loading: false,
-        data: response.data,
-        error: false
-      })
-    })
-    .catch(() => {
-      setProduct({
-        loading: false,
-        data: null,
-        error: true
-      })
-    })
-  }, [url]);
-
+  
   if (product.error) {
     content = <p>There was an error. Please refresh or try again later.</p>
   }

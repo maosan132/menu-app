@@ -1,39 +1,11 @@
-// import HelloWorld from '../components/helloWorld'
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import Loader from '../components/Loader';
 import ProductCard from '../components/ProductCard';
+import useAxiosGet from '../hooks/HttpRequests';
 
 const Home = () => {
   const url = `https://613cd4e5270b96001798b299.mockapi.io/api/v1/test?page=1&limit=10`;
-  const [products, setProducts] = useState({
-    data: null,
-    loading: false,
-    error: false
-  });
 
-  useEffect(() => {
-    setProducts({
-      loading: true,
-      data: null,
-      error: false
-    })
-    axios.get(url)
-    .then(response => {
-      setProducts({
-        loading: false,
-        data: response.data,
-        error: false
-      })
-    })
-    .catch(() => {
-      setProducts({
-        loading: false,
-        data: null,
-        error: true
-      })
-    })
-  }, [url]);
+  let products = useAxiosGet(url);
 
   let content = null;
 
