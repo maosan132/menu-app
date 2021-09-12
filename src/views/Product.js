@@ -13,20 +13,24 @@ export default function Product() {
   let content = null
 
   useEffect(() => {
+    setProduct({
+      loading: true,
+      data: null
+    })
     axios.get(url)
     .then(response => {
       setProduct({
-        loading: true,
+        loading: false,
         data: response.data
-      };
+      })
     })
   }, [url])
 
 
-    if (product) {
+    if (product.data) {
       // return (
       //   <div>
-      //     <h1 className="font-bold text-2xl">{product.name}</h1>
+      //     <h1 className="font-bold text-2xl">{product.data.name}</h1>
       //     <p>
       //       Content for Product page...
       //     </p>
@@ -34,13 +38,13 @@ export default function Product() {
       // )}
       content =
       <div>
-        <h1 className="font-bold text-2xl mb-3">{product.name}</h1>
-        <img src={product.images[0].imageUrl} alt="{product.name}" />
+        <h1 className="font-bold text-2xl mb-3">{product.data.name}</h1>
+        <img src={product.data.images[0].imageUrl} alt="{product.data.name}" />
         <div className="font-bold text-xl mb-3 border text-center">
-          ${product.price}
+          ${product.data.price}
         </div>
         <p>
-          {product.description}
+          {product.data.description}
         </p>
       </div>
     }
