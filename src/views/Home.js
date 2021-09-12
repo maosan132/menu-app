@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Loader from '../components/Loader';
+import ProductCard from '../components/ProductCard';
 
 const Home = () => {
   const url = `https://613cd4e5270b96001798b299.mockapi.io/api/v1/test?page=1&limit=10`;
@@ -36,7 +37,6 @@ const Home = () => {
 
   let content = null;
 
-  
   if (products.error) {
     content = <p>There was an error. Please refresh or try again later.</p>
   }
@@ -48,9 +48,10 @@ const Home = () => {
   if (products.data) {
     content =
     products.data.map((p,k) =>
-      <div>
-        {p.name}
-      </div>
+      <ProductCard
+        product={p}
+      />
+     // <div>{p.name}</div>
     )
   }
 
