@@ -1,6 +1,18 @@
-# Getting Started with Create React App
+# Menu App with React - hooks - Axios - tailwind - react-spring
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this project we'll build a mobile first web application that covers topics such as:
+
+- Creating a React single page app with npx create-react-app
+
+- JavaScript configurable CSS
+
+- Animated components
+
+- React Router
+
+- HTTP requests with Axios
+
+- Creating your own custom hooks for React
 
 ## Available Scripts
 
