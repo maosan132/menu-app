@@ -1,13 +1,16 @@
 import HelloWorld from '../components/helloWorld'
 
-const Home = () => (
-  <div>
-    <h1 className="font-bold text-2xl">This is the home page</h1>
-    <HelloWorld name="Mauricio"/>
-    <p>
-      Content for Home page...
-    </p>
-  </div>
-)
+const Home = () => {
+  let content = null;
+
+  return (
+    <div>
+      <h1 className="font-bold text-2xl pb-3">Best Sellers</h1>
+      {/* <HelloWorld name="Mauricio"/> */}
+      {content}
+    </div>
+  )
+
+}
 
 export default Home
