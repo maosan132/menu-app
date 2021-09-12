@@ -10,6 +10,7 @@ export default function Product() {
   const [product, setProduct] = useState({
     data: null,
     loading: false,
+    error: false
   });
 
   let content = null;
@@ -24,13 +25,22 @@ export default function Product() {
   useEffect(() => {
     setProduct({
       loading: true,
-      data: null
+      data: null,
+      error: false
     })
     axios.get(url)
     .then(response => {
       setProduct({
         loading: false,
-        data: response.data
+        data: response.data,
+        error: false
+      })
+    })
+    .catch(() => {
+      setProduct({
+        loading: false,
+        data: null,
+        error: true
       })
     })
   }, [url])
