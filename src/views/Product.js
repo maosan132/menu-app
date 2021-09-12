@@ -43,7 +43,11 @@ export default function Product() {
         error: true
       })
     })
-  }, [url])
+  }, [url]);
+
+  if (product.error) {
+    content = <p>There was an error. Please refresh or try again later.</p>
+  }
 
   if (product.loading) {
     content = <Loader />
