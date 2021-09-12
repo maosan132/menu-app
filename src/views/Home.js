@@ -47,9 +47,10 @@ const Home = () => {
 
   if (products.data) {
     content =
-    products.data.map((p,k) =>
+    products.data.map((p) =>
       <ProductCard
         product={p}
+        key={p.id}
       />
      // <div>{p.name}</div>
     )
