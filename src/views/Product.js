@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams} from 'react-router-dom';
+import Loader from '../components/Loader'
 
 export default function Product() {
   const { id } = useParams();
@@ -35,7 +36,7 @@ export default function Product() {
   }, [url])
 
   if (product.loading) {
-    content = <div>Loading...</div>
+    content = <Loader />
   }
 
   if (product.data) {
