@@ -16,12 +16,12 @@
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.3.0",
     "react-scripts": "^4.0.3",
-    "react-spring": "^8.x",
     "tailwindcss": "^2.2.15",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "react-spring": "^8.0.27"
   },
   "peerDependencies": {
-    "react-spring": "^8.x"
+    "react-spring": "^8.0.27"
   },
   "scripts": {
     "build:css": "postcss src/index.css -o src/tailwind.css",
